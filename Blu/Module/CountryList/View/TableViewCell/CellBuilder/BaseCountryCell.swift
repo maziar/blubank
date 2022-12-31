@@ -8,20 +8,10 @@
 import Foundation
 
 protocol BaseCountryCellProtocol {
-    func config(country: Country)
-}
-
-protocol BaseCountryCellDelegate: AnyObject {
-    func tapCountry(country: Country)
-}
-
-extension BaseCountryCellDelegate {
-    func tapCountry(country: Country) {}
+    func config(country: Country?)
 }
 
 class BaseCountryCell: BaseTableViewCell {
-    weak var delegate: BaseCountryCellDelegate?
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -30,5 +20,5 @@ class BaseCountryCell: BaseTableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func config(country: Country) {}
+    func config(country: Country?) {}
 }
