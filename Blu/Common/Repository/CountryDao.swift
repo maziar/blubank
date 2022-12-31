@@ -91,10 +91,12 @@ class CountryDao {
         for country in countries {
             let request: NSFetchRequest<CountryEntity> = CountryEntity.fetchRequest()
             request.predicate = NSPredicate(format: "id == %@", String(country.id))
-            let result = try? storageContext.managedContext.fetch(request)
+            let results = try? storageContext.managedContext.fetch(request)
+            if let result = results, !result.isEmpty {
+                continue
+            }
             if let entity = NSEntityDescription.entity(forEntityName: CountryEntity.nameOfClass, in: storageContext.managedContext),
-               let newCountry = NSManagedObject(entity: entity, insertInto: storageContext.managedContext) as? CountryEntity,
-               (result?.isEmpty ?? true) {
+               let newCountry = NSManagedObject(entity: entity, insertInto: storageContext.managedContext) as? CountryEntity {
                 newCountry.id = Int64(country.id)
                 newCountry.flag = country.flag
                 newCountry.name = country.name
