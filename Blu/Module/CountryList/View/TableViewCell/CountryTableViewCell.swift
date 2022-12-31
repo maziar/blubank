@@ -31,14 +31,22 @@ class CountryTableViewCell: BaseCountryCell, ShimmeringViewProtocol {
         super.setSelected(selected, animated: animated)
     }
     
-    override func config(country: Country) {
-        let presenter = CountryPresenter(country: country)
-        countryLabel.text = presenter.name
-        flagImageView.sd_setImage(with: URL(string: presenter.flag),
-                                  placeholderImage: UIImage(named: Image.placeholder.rawValue))
-        let accessoryType: AccessoryType = country.selected ? .checkmark : .none
-        self.accessoryType = accessoryType
-        self.showShimmer(show: false)
+    override func config(country: Country?) {
+        if let country = country {
+            let presenter = CountryPresenter(country: country)
+            countryLabel.text = presenter.name
+            flagImageView.sd_setImage(with: URL(string: presenter.flag),
+                                      placeholderImage: UIImage(named: Image.placeholder.rawValue))
+            let accessoryType: AccessoryType = country.selected ? .checkmark : .none
+            self.accessoryType = accessoryType
+            self.showShimmer(show: false)
+        }
+        else {
+            countryLabel.text = String()
+            flagImageView.image = UIImage()
+            self.accessoryType = .none
+            self.showShimmer(show: true)
+        }
     }
 }
 

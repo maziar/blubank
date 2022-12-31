@@ -19,7 +19,10 @@ class SearchTableViewCell: BaseCountryCell {
         super.setSelected(selected, animated: animated)
     }
     
-    override func config(country: Country) {
+    override func config(country: Country?) {
+        guard let country = country else {
+            return
+        }
         let presenter = CountryPresenter(country: country)
         countryNameLabel.text = presenter.name
         let accessoryType: AccessoryType = country.selected ? .checkmark : .none
