@@ -26,6 +26,7 @@ class CountryListViewController: UIViewController {
     
     func setup() {
         self.title = Label.countryList.rawValue
+        viewModel.delegate = self
     }
     
     func addDoneButton() {

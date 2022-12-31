@@ -8,12 +8,23 @@
 import Foundation
 import UIKit
 
+protocol CountryListDelegate: AnyObject {
+    func reload()
+}
+
 final class CountryListViewModel: BaseViewModel,
                                   CountryListable,
                                   AllCountryListable,
                                   CountrySavable {
     var allCountryListService: AllCountryListServiceProtocol!
-    var allCountryList: [Country] = []
+    var delegate: CountryListDelegate?
+    var allCountryList: [Country] = [] {
+        didSet{
+            DispatchQueue.main.async {
+                self.delegate?.reload()
+            }
+        }
+    }
     
     var countryListService: CountryListServiceProtocol!
     var countryListResponse: CountryListResponse?

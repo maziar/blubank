@@ -14,9 +14,8 @@ extension CountryListViewController {
         tableView.dataSource = self
         CountryTableViewCell.register(for: tableView)
         tableView.cr.addHeadRefresh(animator: PullToRefreshAnimator()) {
-            self.viewModel.allCountryList = [Country]()
             self.viewModel.deleteAll()
-            self.tableView.reloadData()
+            self.viewModel.allCountryList = []
             self.viewModel.countryList(request: CountryListRequest())
         }
     }
@@ -51,10 +50,8 @@ extension CountryListViewController: UITableViewDataSource {
         let tableCell = tableCellBuilder.build(type: .country,
                                                tableView: tableView,
                                                indexPath: indexPath)
-        tableCell.delegate = self
-        if let country = viewModel.allCountryList.item(at: indexPath.row) {
-            tableCell.config(country: country)
-        }
+        let country = viewModel.allCountryList.item(at: indexPath.row)
+        tableCell.config(country: country)
         return tableCell
     }
     
@@ -63,7 +60,8 @@ extension CountryListViewController: UITableViewDataSource {
     }
 }
 
-extension CountryListViewController: BaseCountryCellDelegate {
-    func tapCountry(country: Country) {
+extension CountryListViewController: CountryListDelegate {
+    func reload() {
+        tableView.reloadData()
     }
 }

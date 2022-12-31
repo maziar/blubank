@@ -22,7 +22,6 @@ extension CountryListViewController {
                 strongSelf.tableView.cr.endHeaderRefresh()
                 strongSelf.tableView.cr.endLoadingMore()
                 strongSelf.viewModel.fetchAllCountryList()
-                strongSelf.tableView.reloadData()
             case .didError(let error):
                 strongSelf.tableView.cr.endHeaderRefresh()
                 strongSelf.tableView.cr.endLoadingMore()
