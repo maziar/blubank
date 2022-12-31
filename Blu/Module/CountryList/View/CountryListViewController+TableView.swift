@@ -43,7 +43,6 @@ extension CountryListViewController: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(viewModel.allCountryList.count)
         return viewModel.allCountryList.isEmpty ? 10 : viewModel.allCountryList.count
     }
     
