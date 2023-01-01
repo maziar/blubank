@@ -16,7 +16,6 @@ final class CountryListViewModel: BaseViewModel,
                                   CountryListable,
                                   AllCountryListable,
                                   CountrySavable {
-    var allCountryListService: AllCountryListServiceProtocol!
     var delegate: CountryListDelegate?
     var allCountryList: [Country] = [] {
         didSet{
@@ -25,7 +24,8 @@ final class CountryListViewModel: BaseViewModel,
             }
         }
     }
-    
+    var saveCountryService: SaveCountryServiceProtocol!
+    var allCountryListService: AllCountryListServiceProtocol!
     var countryListService: CountryListServiceProtocol!
     var countryListResponse: CountryListResponse?
     var countryListChangeHandler: ((CountryListModelChange) -> Void)?
@@ -36,9 +36,11 @@ final class CountryListViewModel: BaseViewModel,
     }
     
     init(countryListService: CountryListServiceProtocol = CountryListService(),
-         allCountryListService: AllCountryListServiceProtocol = AllCountryListService()) {
+         allCountryListService: AllCountryListServiceProtocol = AllCountryListService(),
+         saveCountryService: SaveCountryServiceProtocol = SaveCountryService()) {
         self.countryListService = countryListService
         self.allCountryListService = allCountryListService
+        self.saveCountryService = saveCountryService
     }
     
     func fetch() {

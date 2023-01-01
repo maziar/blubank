@@ -10,4 +10,5 @@ import Foundation
 public protocol CountryListServiceProtocol {
     func getCountryList(request: CountryListRequest,
                         _ completion: @escaping (Result<CountryListResponse>) -> Void)
+    func saveAll(response: CountryListResponse)
 }

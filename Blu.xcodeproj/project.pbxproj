@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370151AF29615AAD00452EA7 /* SaveCountryServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370151AE29615AAD00452EA7 /* SaveCountryServiceProtocol.swift */; };
+		370151B129615AB600452EA7 /* SaveCountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370151B029615AB600452EA7 /* SaveCountryService.swift */; };
 		37827B08295B55D30085112E /* MyCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37827B06295B55D30085112E /* MyCountryViewController.swift */; };
 		37827B09295B55D30085112E /* MyCountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37827B07295B55D30085112E /* MyCountryViewController.xib */; };
 		37827B11295B562A0085112E /* MyCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37827B0F295B562A0085112E /* MyCountryTableViewCell.swift */; };
@@ -105,6 +107,8 @@
 /* Begin PBXFileReference section */
 		03AC954E010B05F909448BF6 /* Pods-Blu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blu.release.xcconfig"; path = "Target Support Files/Pods-Blu/Pods-Blu.release.xcconfig"; sourceTree = "<group>"; };
 		195E1EC968EF25B8F5C082FE /* Pods-Blu-BluUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blu-BluUITests.release.xcconfig"; path = "Target Support Files/Pods-Blu-BluUITests/Pods-Blu-BluUITests.release.xcconfig"; sourceTree = "<group>"; };
+		370151AE29615AAD00452EA7 /* SaveCountryServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCountryServiceProtocol.swift; sourceTree = "<group>"; };
+		370151B029615AB600452EA7 /* SaveCountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCountryService.swift; sourceTree = "<group>"; };
 		37827B06295B55D30085112E /* MyCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCountryViewController.swift; sourceTree = "<group>"; };
 		37827B07295B55D30085112E /* MyCountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCountryViewController.xib; sourceTree = "<group>"; };
 		37827B0F295B562A0085112E /* MyCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -370,6 +374,8 @@
 				37B3E44D295C187F00C222C8 /* CountryListService.swift */,
 				37B3E49B295E45FE00C222C8 /* AllCountryListServiceProtocol.swift */,
 				37B3E49D295E460600C222C8 /* AllCountryListService.swift */,
+				370151AE29615AAD00452EA7 /* SaveCountryServiceProtocol.swift */,
+				370151B029615AB600452EA7 /* SaveCountryService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -946,8 +952,10 @@
 				37B3E457295C223D00C222C8 /* ServiceRoutesConstants.swift in Sources */,
 				37B3E4AD295F57C900C222C8 /* CoreDataStorageContext.swift in Sources */,
 				37B3E4D7295F98E600C222C8 /* SearchViewModel.swift in Sources */,
+				370151B129615AB600452EA7 /* SaveCountryService.swift in Sources */,
 				37B3E439295BA96A00C222C8 /* Extensions.swift in Sources */,
 				37B3E4A7295F576000C222C8 /* DBManager.swift in Sources */,
+				370151AF29615AAD00452EA7 /* SaveCountryServiceProtocol.swift in Sources */,
 				37B3E490295E3EA100C222C8 /* CountrySavable.swift in Sources */,
 				37B3E4DC295F9B9600C222C8 /* CountrySearchable.swift in Sources */,
 				37827B11295B562A0085112E /* MyCountryTableViewCell.swift in Sources */,

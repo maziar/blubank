@@ -8,6 +8,7 @@
 import Foundation
 
 protocol CountrySavable: AnyObject {
+    var saveCountryService: SaveCountryServiceProtocol! { get }
     func saveCountries(countries: [Country])
     func updateCountry(country: Country)
     func deleteAll()
@@ -15,14 +16,14 @@ protocol CountrySavable: AnyObject {
 
 extension CountrySavable {
     func saveCountries(countries: [Country]) {
-        DBManager.shared.countryDao.saveAll(countries: countries)
+        saveCountryService.saveCountries(countries: countries)
     }
     
     func updateCountry(country: Country) {
-        DBManager.shared.countryDao.update(country: country)
+        saveCountryService.updateCountry(country: country)
     }
     
     func deleteAll() {
-        DBManager.shared.countryDao.deleteAll()
+        saveCountryService.deleteAll()
     }
 }

@@ -28,15 +28,7 @@ extension CountryListable {
             switch result {
             case .success(let response):
                 strongSelf.countryListResponse = response
-                var countries: [Country] = []
-                for item in response.countries {
-                    var country = Country(selected: false)
-                    country.flag = item.flag
-                    country.id = item.id
-                    country.name = item.name
-                    countries.append(country)
-                }
-                DBManager.shared.countryDao.saveAll(countries: countries)
+                strongSelf.countryListService.saveAll(response: response)
                 strongSelf.emitCountryList(.didSuccess)
             case .failure(let error):
                 strongSelf.emitCountryList(.didError(error))

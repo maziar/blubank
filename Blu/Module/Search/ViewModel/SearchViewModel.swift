@@ -15,6 +15,7 @@ final class SearchViewModel: BaseViewModel,
                              CountrySearchable,
                              CountrySavable {
     weak var delegate: SearchViewModelDelegate?
+    var saveCountryService: SaveCountryServiceProtocol!
     var searchService: SearchServiceProtocol!
     var searchResultCountryList: [Country] = []
     
@@ -34,7 +35,9 @@ final class SearchViewModel: BaseViewModel,
         !searchText.isEmpty
     }
     
-    init(searchService: SearchServiceProtocol = SearchService()) {
+    init(searchService: SearchServiceProtocol = SearchService(),
+         saveCountryService: SaveCountryServiceProtocol = SaveCountryService()) {
         self.searchService = searchService
+        self.saveCountryService = saveCountryService
     }
 }

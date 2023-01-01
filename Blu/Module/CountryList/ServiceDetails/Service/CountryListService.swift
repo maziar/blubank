@@ -34,4 +34,16 @@ public class CountryListService: BaseService, CountryListServiceProtocol {
             }
         }
     }
+    
+    public func saveAll(response: CountryListResponse) {
+        var countries: [Country] = []
+        for item in response.countries {
+            var country = Country(selected: false)
+            country.flag = item.flag
+            country.id = item.id
+            country.name = item.name
+            countries.append(country)
+        }
+        DBManager.shared.countryDao.saveAll(countries: countries)
+    }
 }

@@ -31,9 +31,9 @@ class CountryListViewController: UIViewController {
     
     func addDoneButton() {
         let doneButton = UIBarButtonItem(title: Label.done.rawValue,
-                                        style: .done,
-                                        target: self,
-                                        action: #selector(dismissView))
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(dismissView))
         self.navigationItem.leftBarButtonItems = [doneButton]
     }
     
