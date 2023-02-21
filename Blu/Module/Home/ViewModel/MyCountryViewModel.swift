@@ -12,7 +12,6 @@ protocol MyCountryDelegate: AnyObject {
     func reload()
 }
 
-
 final class MyCountryViewModel: BaseViewModel,
                                 MyCountryListable {
     weak var delegate: MyCountryDelegate?

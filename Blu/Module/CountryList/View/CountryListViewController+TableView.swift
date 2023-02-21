@@ -29,7 +29,7 @@ extension CountryListViewController: UITableViewDelegate {
                 return
             }
             cell.accessoryType = country.selected ? .none : .checkmark
-            country.selected = !country.selected
+            country.selected.toggle()
             viewModel.allCountryList[indexPath.row] = country
             viewModel.updateCountry(country: country)
         }

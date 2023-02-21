@@ -24,7 +24,7 @@ extension SearchViewController: UITableViewDelegate {
                 return
             }
             cell.accessoryType = country.selected ? .none : .checkmark
-            country.selected = !country.selected
+            country.selected.toggle()
             viewModel.searchResultCountryList[indexPath.row] = country
             viewModel.updateCountry(country: country)
         }

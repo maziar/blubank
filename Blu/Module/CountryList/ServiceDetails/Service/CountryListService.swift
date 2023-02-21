@@ -14,7 +14,7 @@ public class CountryListService: BaseService, CountryListServiceProtocol {
     }
     
     public func getCountryList(request: CountryListRequest,
-                             _ completion: @escaping (Result<CountryListResponse>) -> Void) {
+                               _ completion: @escaping (Result<CountryListResponse>) -> Void) {
         let urlString = createApiRoute(route: country_list_route)
         AF.request(urlString,
                    method: .get,

@@ -10,6 +10,4 @@ import Foundation
 import CoreData
 
 @objc(CountryEntity)
-public class CountryEntity: NSManagedObject {
-
-}
+public class CountryEntity: NSManagedObject {}

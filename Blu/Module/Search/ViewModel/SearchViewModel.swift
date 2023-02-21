@@ -23,8 +23,7 @@ final class SearchViewModel: BaseViewModel,
         didSet {
             if !searchText.isEmpty {
                 searchCountryList(searchText: searchText)
-            }
-            else {
+            } else {
                 searchResultCountryList = []
             }
             delegate?.reload()

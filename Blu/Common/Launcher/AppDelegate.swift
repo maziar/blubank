@@ -10,14 +10,17 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         DBManager.setup(storageContext: coreDataStorageContext)
         return true
     }
 
     // MARK: UISceneSession Lifecycle
 
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+    func application(_ application: UIApplication,
+                     configurationForConnecting connectingSceneSession: UISceneSession,
+                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
@@ -30,10 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     static let sharedAppDelegate: AppDelegate = {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
-            fatalError("Unexpected app delegate type, did it change? \(String(describing: UIApplication.shared.delegate))")
+            fatalError("U? \(String(describing: UIApplication.shared.delegate))")
         }
         return delegate
     }()
-
 }
-

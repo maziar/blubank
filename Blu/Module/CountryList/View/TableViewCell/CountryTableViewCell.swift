@@ -40,8 +40,7 @@ class CountryTableViewCell: BaseCountryCell, ShimmeringViewProtocol {
             let accessoryType: AccessoryType = country.selected ? .checkmark : .none
             self.accessoryType = accessoryType
             self.showShimmer(show: false)
-        }
-        else {
+        } else {
             countryLabel.text = String()
             flagImageView.image = UIImage()
             self.accessoryType = .none
