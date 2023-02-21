@@ -18,9 +18,8 @@ extension PullToRefreshDelegate {
 
 public class BaseViewModel {
     weak var pullToRefreshDelegate: PullToRefreshDelegate?
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
     let defaults = UserDefaults.standard
-    
     func checkRepeatRequest(lastdate: Date?) -> Bool {
         guard let ldate = lastdate else {
             return false
@@ -33,9 +32,8 @@ public class BaseViewModel {
         let lhour = calendar.component(.hour, from: ldate)
         let lminutes = calendar.component(.minute, from: ldate)
         let lsecond = calendar.component(.second, from: ldate)
-        
-        if (hour == lhour && lminutes == minutes) {
-            if (second - lsecond <= 1) {
+        if hour == lhour && lminutes == minutes {
+            if second - lsecond <= 1 {
                 return true
             }
         }

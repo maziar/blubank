@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
+ // swiftlint: disable attributes
 extension CountryEntity {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CountryEntity> {
         return NSFetchRequest<CountryEntity>(entityName: "CountryEntity")

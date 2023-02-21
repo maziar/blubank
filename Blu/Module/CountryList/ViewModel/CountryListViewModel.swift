@@ -18,7 +18,7 @@ final class CountryListViewModel: BaseViewModel,
                                   CountrySavable {
     var delegate: CountryListDelegate?
     var allCountryList: [Country] = [] {
-        didSet{
+        didSet {
             DispatchQueue.main.async {
                 self.delegate?.reload()
             }

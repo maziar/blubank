@@ -8,7 +8,6 @@
 import UIKit
 
 class DBManager {
-
     // MARK: - Private properties
     private var storageContext: CoreDataStorageContext?
 
@@ -30,5 +29,4 @@ class DBManager {
         }
         fatalError("You must call setup to configure the StoreContext before accessing any dao")
     }
-
 }

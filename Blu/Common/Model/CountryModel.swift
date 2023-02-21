@@ -8,8 +8,7 @@
 import Foundation
 import ObjectMapper
 
-public struct CountryModel: Mappable
-{
+public struct CountryModel: Mappable {
     public var flag: String?
     public var id: Int!
     public var name: String?

@@ -46,7 +46,6 @@ class CountryDao {
         return []
     }
     
-    
     func get(identifier: Int) -> CountryEntity? {
         return nil
     }
@@ -68,8 +67,12 @@ class CountryDao {
     }
     
     func save(country: Country) -> Bool {
-        if let entity = NSEntityDescription.entity(forEntityName: CountryEntity.nameOfClass, in: storageContext.managedContext),
-           let newCountry = NSManagedObject(entity: entity, insertInto: storageContext.managedContext) as? CountryEntity {
+        if let entity = NSEntityDescription.entity(
+            forEntityName: CountryEntity.nameOfClass,
+            in: storageContext.managedContext),
+           let newCountry = NSManagedObject(
+            entity: entity,
+            insertInto: storageContext.managedContext) as? CountryEntity {
             newCountry.id = Int64(country.id)
             newCountry.flag = country.flag
             newCountry.name = country.name
@@ -78,8 +81,7 @@ class CountryDao {
             do {
                 try storageContext.managedContext.save()
                 return true
-            }
-            catch {
+            } catch {
                 return false
             }
         }
@@ -95,8 +97,12 @@ class CountryDao {
             if let result = results, !result.isEmpty {
                 continue
             }
-            if let entity = NSEntityDescription.entity(forEntityName: CountryEntity.nameOfClass, in: storageContext.managedContext),
-               let newCountry = NSManagedObject(entity: entity, insertInto: storageContext.managedContext) as? CountryEntity {
+            if let entity = NSEntityDescription.entity(
+                forEntityName: CountryEntity.nameOfClass,
+                in: storageContext.managedContext),
+               let newCountry = NSManagedObject(
+                entity: entity,
+                insertInto: storageContext.managedContext) as? CountryEntity {
                 newCountry.id = Int64(country.id)
                 newCountry.flag = country.flag
                 newCountry.name = country.name
@@ -106,8 +112,7 @@ class CountryDao {
         do {
             try storageContext.managedContext.save()
             return true
-        }
-        catch {
+        } catch {
             return false
         }
     }
@@ -142,8 +147,7 @@ class CountryDao {
             }
             do {
                 try storageContext.managedContext.save()
-            }
-            catch {
+            } catch {
                 return false
             }
         } catch let error as NSError {
