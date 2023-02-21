@@ -20,7 +20,9 @@ extension SearchViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let cell = tableView.cellForRow(at: indexPath) {
-            guard var country = viewModel.searchResultCountryList.item(at: indexPath.row) else {
+            guard var country = viewModel.searchResultCountryList.item(at: indexPath.row) else
+            
+            {
                 return
             }
             cell.accessoryType = country.selected ? .none : .checkmark
